@@ -1,0 +1,39 @@
+@import "./config";
+
+header.header {
+  @include mediaLg {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    grid-template-rows: 2rem;
+  }
+
+  div#breadcrumb {
+    @include mediaLg {
+      display: none;
+    }
+  }
+
+  nav.nav {
+    @include mediaLg {
+      padding-right: 1rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr 2fr;
+      grid-template-rows: 2rem;
+    }
+
+    .link {
+      @include mediaLg {
+        margin: 0;
+        height: 2rem;
+        line-height: 2rem;
+      }
+
+      &:last-child {
+        @include mediaLg {
+          justify-self: flex-end;
+        }
+      }
+    }
+  }
+}

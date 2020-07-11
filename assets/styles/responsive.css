@@ -1,0 +1,53 @@
+.btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 769px) {
+  header.header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 9fr;
+        grid-template-columns: 1fr 9fr;
+    -ms-grid-rows: 2rem;
+        grid-template-rows: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header.header div#breadcrumb {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header.header nav.nav {
+    padding-right: 1rem;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr 2fr;
+    -ms-grid-rows: 2rem;
+        grid-template-rows: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header.header nav.nav .link {
+    margin: 0;
+    height: 2rem;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header.header nav.nav .link:last-child {
+    justify-self: flex-end;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

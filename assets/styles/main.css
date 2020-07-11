@@ -1,0 +1,380 @@
+.btn, section.section1 .section1_left button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body {
+  background-color: #ebe8e8;
+  height: 100%;
+  width: 100vw;
+  position: relative;
+}
+
+.top_container {
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  height: 25rem;
+  background-color: #0d0d0d;
+}
+
+@media screen and (min-width: 501px) {
+  .top_container {
+    height: 30rem;
+  }
+}
+
+.bottom_container {
+  background-color: #ffffff;
+}
+
+.center_container {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding-top: 2rem;
+  width: 100%;
+  margin: auto;
+}
+
+@media screen and (min-width: 769px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1171px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+header.header {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+  /* **************LOGO****************** */
+  /* **************MENU BUTTON MOBILE******** */
+  /* ********************NAV BAR *************** */
+}
+
+header.header.show_nav {
+  height: 16rem;
+  border-bottom: 1px solid #ffffff;
+}
+
+header.header #logo_container {
+  height: 2rem;
+  width: 5rem;
+  margin-left: 1rem;
+}
+
+header.header div#breadcrumb {
+  height: 2rem;
+  width: 2rem;
+  border: 1px solid #ffffff;
+  border-radius: 0.3rem;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+header.header div#breadcrumb div.bar {
+  width: 80%;
+  height: 10%;
+  background: #ffffff;
+  margin: 3px 0;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+header.header div#breadcrumb.menu_open {
+  border: 1px solid #000000;
+}
+
+header.header div#breadcrumb.menu_open div.bar:first-child {
+  -webkit-transform: translate(0, 5px) rotate(45deg);
+          transform: translate(0, 5px) rotate(45deg);
+}
+
+header.header div#breadcrumb.menu_open div.bar:nth-child(2) {
+  display: none;
+}
+
+header.header div#breadcrumb.menu_open div.bar:last-child {
+  -webkit-transform: translate(0, -4px) rotate(135deg);
+          transform: translate(0, -4px) rotate(135deg);
+}
+
+header.header nav.nav {
+  text-align: center;
+}
+
+header.header nav.nav .link {
+  margin: 0.5rem 0;
+}
+
+header.header nav.nav li:last-child a {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  background-color: #262626;
+}
+
+section.section1 {
+  background-color: #ffffff;
+  height: 25rem;
+  margin: 0 1rem;
+  border-radius: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+}
+
+@media screen and (min-width: 769px) {
+  section.section1 {
+    height: 30rem;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+section.section1 .section1_right {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  section.section1 .section1_right {
+    height: 30rem;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[7];
+        grid-template-columns: repeat(7, 1fr);
+    -ms-grid-rows: (1fr)[8];
+        grid-template-rows: repeat(8, 1fr);
+  }
+  section.section1 .section1_right .section1_image {
+    height: 100%;
+    width: 100%;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 5;
+    grid-column: 2/7;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 6;
+    grid-row: 2/8;
+  }
+}
+
+section.section1 .section1_left {
+  height: 25rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[7];
+      grid-template-columns: repeat(7, 1fr);
+  -ms-grid-rows: (1fr)[8];
+      grid-template-rows: repeat(8, 1fr);
+}
+
+@media screen and (min-width: 769px) {
+  section.section1 .section1_left {
+    height: 30rem;
+  }
+}
+
+section.section1 .section1_left h1 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2/7;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  font-size: 2rem;
+}
+
+section.section1 .section1_left h3 {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2/7;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3/4;
+  color: #999999;
+  font-size: 1.5rem;
+}
+
+section.section1 .section1_left p {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2/7;
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  grid-row: 5/6;
+  line-height: 1.7rem;
+}
+
+section.section1 .section1_left button {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2/7;
+  -ms-grid-row: 7;
+  -ms-grid-row-span: 1;
+  grid-row: 7/8;
+  background-color: #f46632;
+  -webkit-transition: all 300ms ease-out;
+  transition: all 300ms ease-out;
+}
+
+section.section1 .section1_left button:hover {
+  background-color: #f78a62;
+}
+
+@media screen and (min-width: 501px) {
+  section.section1 .section1_left button {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 4;
+    grid-column: 2/6;
+  }
+}
+
+section.section2 {
+  margin: 4rem 1rem;
+  position: relative;
+}
+
+section.section2 .section2_top {
+  display: none;
+}
+
+section.section2 .section_bottom {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+section.section2 .section_bottom h1 {
+  text-align: center;
+  padding: 2rem;
+}
+
+section.section2 .section_bottom h1::before {
+  content: "About Us";
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+section.section2 .section_bottom p {
+  line-height: 1.7rem;
+  text-align: justify;
+}
+
+section.section2 .section_bottom ul {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+}
+
+.btn, section.section1 .section1_left button {
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  height: 2.5rem;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 769px) {
+  header.header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 9fr;
+        grid-template-columns: 1fr 9fr;
+    -ms-grid-rows: 2rem;
+        grid-template-rows: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header.header div#breadcrumb {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header.header nav.nav {
+    padding-right: 1rem;
+    width: 100%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr 2fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1.5fr 1fr 2fr;
+    -ms-grid-rows: 2rem;
+        grid-template-rows: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header.header nav.nav .link {
+    margin: 0;
+    height: 2rem;
+    line-height: 2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header.header nav.nav .link:last-child {
+    justify-self: flex-end;
+  }
+}
+/*# sourceMappingURL=main.css.map */
