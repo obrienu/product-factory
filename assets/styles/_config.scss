@@ -8,7 +8,17 @@ $padding-large: 2rem;
 
 $hearder-large: 2rem;
 $hearder-mid: 1.5rem;
-$header-extra-large: 3rem;
+$header-extra-large: 4rem;
+
+$background-opacity:  0.1;
+
+
+
+
+$border-radius: 20px;
+
+$section_margin: 4rem 1rem 0;
+
 
 @mixin mediaMd {
   @media screen and (min-width: 501px) {
@@ -34,7 +44,43 @@ $header-extra-large: 3rem;
   cursor: pointer;
   border: none;
   border-radius: 10px;
-  height: 2.5rem;
+  height: 3rem;
   color: $text-white;
   font-weight: bold;
+}
+
+.active_sublink{
+  background-color: $background-black;
+  color: $text-white;
+  font-size: 1.1rem;
+}
+
+.mt-lg{
+  margin-top: 2rem;
+}
+
+.mr-sm{
+  margin-right: 1rem;
+}
+
+.pb-none{
+  padding-bottom: 0;
+}
+
+.fa-check-circle{
+  color: lightgreen;
+  margin-right: 0.5rem;
+}
+
+.primary_btn{
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  color: $text-white;
+  font-weight: bold;
+  background-color: $orange;
+  line-height: 2rem;
+  padding: 0 2.5rem;
+  height: 2rem;
+  margin-top: 0.4rem;
 }

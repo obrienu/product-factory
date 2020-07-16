@@ -19,13 +19,13 @@ a {
 }
 
 body {
-  background-color: #ebe8e8;
+  background-color: darken($color: #ffffff, $amount: 4);
   height: 100%;
   width: 100vw;
   position: relative;
 }
 
-.top_container {
+.first_container {
   @include easeOut;
   height: 25rem;
   background-color: lighten($color: $background-black, $amount: 5);
@@ -34,8 +34,43 @@ body {
   }
 }
 
-.bottom_container {
-  background-color: $background-white;
+
+.second_container {
+  background-color: darken($color: $background-white, $amount: 5);
+  height: 50rem;
+
+  @include mediaMd{
+    height: 45rem;
+  }
+  @include mediaLg {
+    height: 65rem;
+  }
+  
+}
+.third_container {
+  background-color: darken($color: #ffffff, $amount: 1);
+  height: 400rem;
+
+  @include mediaMd{
+    height: 250rem;
+  }
+  @include mediaLg {
+    height: 180rem;
+  }
+  
+}
+
+.fourth_container {
+  background-color: darken($color: #ffffff, $amount: 5);
+  height: 50rem;
+
+  @include mediaMd{
+    height: 45rem;
+  }
+  @include mediaLg {
+    height: 65rem;
+  }
+  
 }
 
 .center_container {
@@ -195,11 +230,12 @@ section.section1 {
     p {
       grid-column: 2/7;
       grid-row: 5/6;
-      line-height: 1.7rem;
+      line-height: 2rem;
+      font-size: 1.2rem;
     }
 
     button {
-      grid-column: 2/7;
+      grid-column: 2/6;
       grid-row: 7/8;
       background-color: $orange;
       @include easeOut;
@@ -216,36 +252,1154 @@ section.section1 {
 }
 
 section.section2 {
-  margin: 4rem 1rem;
+  margin: $section_margin;
   position: relative;
+  @include mediaLg{
+    padding-top: 8rem;
+  }
 
   .section2_top {
     display: none;
+    @include mediaLg{
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 5rem;
+      width: 30rem;
+      height: auto;
+    }
+
+    @media screen and (max-width: 1000px) {
+      width: 25rem;
+      height: auto;
+    }
   }
 
   .section_bottom {
     background-color: $background-white;
-    border-radius: 20px;
+    border-radius: $border-radius;
     padding: 2rem;
+
+    @include mediaLg{
+    padding: 5rem;
+    }
 
     h1 {
       text-align: center;
       padding: 2rem;
+
+      @include mediaLg{
+        margin-bottom: 1rem;
+      text-align: right;
+      font-size: 2rem;
+      position: relative;
+      right: 9rem;
+      }
+
       &::before {
-        content: "About Us";
+        content: "About";
         font-size: $header-extra-large;
-        opacity: 0.5;
+        opacity: $background-opacity;
+        z-index: 0;
+        text-align: center;
+        width: 100%;
+        position: absolute;
+        top: 2.3rem;
+        left: 0.2rem;
+        @include mediaLg{
+          top: -1rem;
+          right: 0rem;
+          text-align: right;
+          font-size: 6rem;
+          padding-left: 1rem;
+        }
       }
     }
 
     p {
       line-height: 1.7rem;
       text-align: justify;
+
+      @include mediaLg{
+        line-height: 2.5rem;
+        text-align: left;
+      }
     }
     ul {
       position: absolute;
       top: 3rem;
       right: 2rem;
+
+      li{
+        cursor: pointer;
+        @include easeOut;
+        @include mediaLg{
+          margin-top: 1rem;
+        }
+        &:hover{
+          color: lighten($color: #000000, $amount: 30);
+        }
+      }
+
+      @include mediaLg{
+        font-size: 1.5rem;
+        top: 12rem;
+        right: 6rem;
+      }
+      }
+    }
+  }
+
+  section.section3{
+    padding: 2rem;
+    margin: $section_margin;
+    background-color: $background-white ;
+    border-radius: $border-radius;
+
+    @include mediaLg{
+      padding: 5rem;
+    }
+
+    h1{
+      text-align: center;
+      padding: 1rem 0;
+      position: relative;
+
+
+
+      &::before{
+        content: "Experience";
+        position: absolute;
+        font-size: 3.5rem;
+        top: -0.5rem;
+        left: 0;
+        text-align: center;
+        opacity: $background-opacity;
+        z-index: 0;
+        text-align: center;
+        width: 100%;
+
+        @include mediaLg{
+          font-size: 4.5rem;
+          top: -1rem;
+        }
+      }
+    }
+
+    ul.section3_mid{
+      text-align: left;
+      margin: 1rem 0;
+      @media screen and (min-width: 700px){
+        width: 80%;
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+      }
+
+      li{
+          padding: 0.5rem;
+          cursor: pointer;
+          @include easeOut;
+          
+
+          @media screen and (min-width: 700px){
+            text-align: center;
+            border: solid #000000 1px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          &:hover{
+            background-color: lighten($color: #000000, $amount: 40);
+            color: $text-white;
+          }
+
+          &:first-child{
+            @media screen and (min-width: 700px){
+              border-top-left-radius: 15px ;
+              border-bottom-left-radius: 15px ;
+              border-right: none;
+            }
+          }
+
+          &:last-child{
+            @media screen and (min-width: 700px){
+              border-top-right-radius: 15px ;
+              border-bottom-right-radius: 15px ;
+              border-left: none;
+            }
+          }
+      }
+
+    }
+
+    .section3_bottom{
+      padding-top: 1rem;
+
+      @include mediaLg{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows:max-content ;
+        column-gap: 0;
+      }
+
+      div.section3_bottom_img{
+        display: none;
+
+        @include mediaLg{
+          display: block;
+          img{
+            width: auto;
+            height: auto;
+            max-height: 14rem;
+          }
+        }
+        
+      }
+
+      
+
+      div.section3_bottom_text{
+        text-align: justify;
+        line-height: 1.5rem;
+
+        @include mediaLg{
+          line-height: 2rem;
+          padding: 1rem;
+          line-height: 2rem;
+        }
+
+        @include mediaXl{
+          line-height: 2.5rem;
+        }
+      }
+    }
+
+  }
+
+  section.section4{
+    padding: 2rem;
+    margin: 4rem 0 0;
+    
+
+    h2{
+      text-align: center;
+      padding: 1rem 0;
+      position: relative;
+
+      &::before{
+        content: "Sessions";
+        position: absolute;
+        font-size: 3.5rem;
+        top: -0.5rem;
+        left: 0;
+        text-align: center;
+        opacity: $background-opacity;
+        z-index: 0;
+        text-align: center;
+        width: 100%;
+
+        @include mediaLg{
+          font-size: 4.5rem;
+          top: -1rem;
+        }
+      }
+    }
+
+    .section4_sessions{
+      display: grid;
+      grid-template-columns: 5px auto;
+      column-gap: 0.5rem;
+
+      .sessions_side_bar{
+        height: 100%;
+        padding-top: 2px;
+        background-color: #eeeeee;
+
+        .sessions_side_bar_dark{
+          height: 2rem;
+          background-color: lighten($color: #000000, $amount: 10);
+        }
+      }
+
+      .session_right{
+
+        @include mediaMd{
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: repeat(3, auto);
+        }
+
+        @include mediaLg{
+          grid-template-columns: 1fr 3fr;
+          grid-template-rows: repeat(2, auto);
+        }
+
+        h3{
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          background-color:  #eeeeee;
+
+          @include mediaMd{
+            grid-column: 1/3;
+          }
+
+          @include mediaLg{
+            grid-column: 1/2;
+            grid-row: 1/2;
+          }
+        }
+
+        ul{
+          padding: 0.5rem 1rem;
+
+          @include mediaMd{
+            grid-column: 1/2;
+            padding: 0;
+          }
+
+          @include mediaLg{
+            
+            grid-column: 2/3;
+            grid-row: 1/2;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+          }
+
+          li{
+            padding: 0.5rem 0;
+            line-height: 1rem;
+
+            @include mediaLg{
+              background-color:  #eeeeee;
+              width: 100%;
+            }
+          }
+        }
+
+        .sessions_avatar{
+          padding: 0.5rem 1rem;
+
+          @include mediaMd{
+            grid-column: 2/3;
+          }
+
+          @include mediaLg{
+            grid-column: 1/2;
+            grid-row: 2/3;
+          }
+        }
+
+        p{
+          padding: 0.5rem 1rem;
+          text-align: justify;
+          line-height: 1.7rem;
+          padding-bottom: 5rem;
+
+          @include mediaMd{
+            grid-column: 1/3;
+            padding-left: 0 ;
+          }
+
+          @include mediaLg{
+            grid-column: 2/3;
+            grid-row: 2/3;
+          }
+        }
+      }
+
+    }
+  }
+
+  section.section5{
+    padding: 2rem 1rem;
+    margin: $section_margin;
+    background-color: $background-white ;
+    border-radius: $border-radius;
+
+    @include mediaLg{
+      padding: 5rem;
+    }
+
+    h2{
+      text-align: center;
+      padding: 1rem 0;
+      position: relative;
+
+      &::before{
+        content: "Masters";
+        position: absolute;
+        font-size: 3.5rem;
+        top: -0.5rem;
+        left: 0;
+        text-align: center;
+        opacity: $background-opacity;
+        z-index: 0;
+        text-align: center;
+        width: 100%;
+
+        @include mediaLg{
+          font-size: 4.5rem;
+          top: -1rem;
+        }
+      }
+    }
+
+    .section5_gallery{
+      margin-top: 1rem;
+      display: grid;
+      grid-gap: 1rem;
+      grid-template-columns: 9rem 9rem;
+      grid-template-rows: repeat(5, 13rem);
+      grid-gap: 1rem;
+      justify-content: space-evenly;
+
+      @include mediaMd{
+        grid-template-columns: 9rem 9rem 9rem;
+        grid-template-rows: repeat(4, 13rem);
+      }
+
+      @include mediaLg{
+        grid-template-columns: 9rem 9rem 9rem 9rem 9rem;
+        grid-template-rows: repeat(2, 13rem);
+  
+      }
+    }
+
+    .gallery_container{
+      display: grid;
+      grid-template-rows: 9rem 2rem 2rem;
+      grid-template-columns: 1fr;
+
+      .gallery_image{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 1rem;
+
+        &:hover{
+          .social_handle{
+            display: flex;
+          }
+        }
+
+        img{
+          width: 100%;
+          height: auto;
+          border-radius: 1rem;
+
+        }
+
+        .social_handle{
+          border-radius: 1rem;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          z-index: 2;
+          background-color: rgba($color: #000000, $alpha: 0.9);
+          color: $text-white;
+          display: none;
+          flex-flow: column;
+          align-items: center;
+          justify-content: space-evenly;
+          @include easeOut;
+
+          ul{
+            width: 80%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            font-size: 1.5rem;
+            text-align: center;
+
+            li{
+              cursor: pointer;
+              color: rgba($color: #ffffff, $alpha: 0.8);
+              @include easeOut;
+
+              &:hover{
+                color: rgba($color: #ffffff, $alpha: 1);
+
+              }
+            }
+          }
+
+          .about_master{
+            padding:0.5rem ;
+            background-color: rgba($color: #ffffff, $alpha: 0.1);
+            cursor: pointer;
+            border-radius: 10px;
+            display: flex;
+            font-size: 0.7rem;
+            width: 80%;
+            margin: 0 auto;
+            @include easeOut;
+
+            &:hover{
+              background-color: rgba($color: #ffffff, $alpha: 0.5);
+            }
+
+            .menu_bar{
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              align-content: center;
+              width: 1rem;
+              height: 1rem;
+              margin-right: 1rem;
+  
+              .bar{
+                background-color: #ffff;
+  
+                &:first-child{
+                  width: 0.6rem;
+                  height: 2px;
+                }
+
+                &:nth-child(2){
+                  width: 1rem;
+                  height: 2px;
+                }
+                &:nth-child(3){
+                  width: 0.6rem;
+                  height: 2px;
+                }
+              }
+  
+            }
+          }
+
+          
+        }
+      }
+
+      .name{
+        font-weight: bold;
+        font-size: 0.9rem;
+      }
+
+      .title{
+        font-size: 0.9rem;
+      }
+    }
+
+  }
+
+section.section6{
+    padding: 2rem 0;
+    margin: $section_margin;
+
+h2{
+  text-align: center;
+      padding: 1rem 0;
+      position: relative;
+
+      &::before{
+        content: "F A Q";
+        position: absolute;
+        font-size: 3.5rem;
+        top: -0.5rem;
+        left: 0;
+        text-align: center;
+        opacity: $background-opacity;
+        z-index: 0;
+        text-align: center;
+        width: 100%;
+
+        @include mediaLg{
+          font-size: 4.5rem;
+          top: -1rem;
+        }
+      }
+}
+
+  div.section6_main{
+    background-color: $background-white ;
+    border-radius: $border-radius;
+    padding: 1rem;
+    margin: $section_margin;
+
+    @include mediaLg{
+      font-size: 1.2rem;
+      padding: 1.5rem 1rem;
+    }
+
+    .question{
+      text-align: left;
+      display: grid;
+      grid-template-columns: auto 3rem;
+    }
+
+    .expand_answer{
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+
+
+    .answer{
+      margin-top: 1rem;
+      display: none;
+    }
+
+    .open_answer{
+        display: block;
+    }
+  }
+}
+
+section.section7{
+  padding: 2rem 1rem;
+    margin: $section_margin;
+    background-color: $background-white ;
+    border-radius: $border-radius;
+
+    @include mediaLg{
+      padding: 5rem;
+    }
+
+    h2{
+      text-align: center;
+      padding: 1rem 0;
+      position: relative;
+
+      &::before{
+        content: "Fee";
+        position: absolute;
+        font-size: 3.5rem;
+        top: -0.5rem;
+        left: 0;
+        text-align: center;
+        opacity: $background-opacity;
+        z-index: 0;
+        text-align: center;
+        width: 100%;
+
+        @include mediaLg{
+          content: "Course Fee";
+          font-size: 4.5rem;
+          top: -1rem;
+        }
+      }
+    }
+
+    .section7_main{
+
+      @include mediaLg{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .section7_left{
+        h3{
+          padding: 1rem 0;
+        }
+
+        ul{
+          li{
+            display: grid;
+            grid-template-columns: 2rem auto;
+            padding: 0.5rem 0;
+
+            @include mediaLg{
+              padding: 1rem 0;
+            }
+          }
+          
+        }
+      }
+
+      .section7_right{
+        padding: 2rem;
+        background-color: $background-black;
+        color: $text-white;
+        border-radius: $border-radius;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 2rem;
+        text-align: center;
+
+        p{
+          padding:0.4rem;
+        }
+        
+
+        p:nth-child(2) span{
+          font-weight: bold;
+          font-size: 1.2rem;
+        }
+
+        
+      }
+    }
+
+    hr{
+      border: solid 0.2px #2120201a;
+      margin: 2rem 0;
+    }
+
+    footer{
+      opacity: 0.5;
+      text-align: center;
+    }
+}
+
+section.section8{
+  background-color: $background-black;
+  color: $text-white;
+  margin: 4rem 1rem 2rem;
+  padding: 2rem;
+  
+
+  @include mediaLg{
+    margin: 6rem 1rem 2rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .section8_left{
+
+
+    @include mediaLg{
+      padding: 4rem;
+    }
+
+    p{
+      padding: 1rem 0;
+    }
+
+    input{
+      width: 80%;
+      height: 2rem;
+      border-radius: 14px;
+      background-color: #fcfcfc1f;
+      border: none;
+      padding-left: 1rem;
+    }
+  
+    .section8_btn{
+      display: inline-block;
+      margin-top: 1rem;
+    }
+  }
+
+  .section8_right{
+    display: none;
+
+    @include mediaLg{
+      padding: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url("../img/mail.png");
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-size: 25rem;
+      position: relative;
+      z-index: 2;
+      background-color: rgba(0,0,0,1);
+  
+      &::before{
+        content: "";
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.3);
+        box-shadow: inset 13px -77px 154px 110px rgba(0,0,0,1);
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+      }
+      
+        img{
+          width: 10rem;
+          height: auto;
+          z-index: 2;
+        }
+    }
+    
+  }
+
+  }
+
+section.section9{
+  padding: 2rem 1rem;
+  margin: $section_margin;
+  border-radius: $border-radius;
+
+  @include mediaLg{
+    padding: 4rem;
+  }
+
+  h2{
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    margin-bottom: 2rem;
+    &::before{
+      content: "Project";
+      position: absolute;
+      font-size: 3.5rem;
+      top: -0.5rem;
+      left: 0;
+      text-align: center;
+      opacity: $background-opacity;
+      z-index: 0;
+      text-align: center;
+      width: 100%;
+      
+
+      @include mediaLg{
+        font-size: 4.5rem;
+        top: -1rem;
+      }
+    }
+  }
+
+  .section9_main{
+
+    @include mediaLg{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+    }
+
+    .section9_left{
+      @include mediaLg{
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+
+      header{
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 1rem 0;
+      }
+
+      p{
+        padding: 1rem 0;
+        line-height: 1.5rem;
+      }
+
+      li{
+        display: grid;
+        grid-template-columns: 2rem auto;
+        padding: 0.5rem 0;
+      }
+    }
+
+    .section9_right{
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include mediaLg{
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+
+      img{
+        width: 15rem;
+        height: auto;
+
+        @include mediaLg{
+          width: 18rem;
+        }
+      }
+    }
+
+    .section9_nav{
+      display: flex;
+      flex-flow: row;
+      justify-content: space-between;
+
+      @include mediaLg{
+        grid-column: 1/3;
+        grid-row: 2/3;
+      }
+
+      .section9_direction{
+        cursor: pointer;
+        font-size: 2rem;
+        color: lighten($color: #000000, $amount: 40)
+      }
+    }
+  }
+}
+
+section.section10{
+    padding: 2rem 1rem;
+    margin: $section_margin;
+
+    @include mediaLg{
+      padding: 4rem;
+    }
+
+    h2{
+      text-align: center;
+      padding: 1rem 0;
+      position: relative;
+      margin-bottom: 2rem;
+      &::before{
+        content: "Schedule";
+        position: absolute;
+        font-size: 3.5rem;
+        top: -0.5rem;
+        left: 0;
+        text-align: center;
+        opacity: $background-opacity;
+        z-index: 0;
+        text-align: center;
+        width: 100%;
+        
+  
+        @include mediaLg{
+          font-size: 4.5rem;
+          top: -1rem;
+        }
+      }
+    }
+
+    .section10_main{
+      display: grid;
+      grid-template-columns: 2rem 1fr 1fr ;
+      grid-template-rows: 2rem 4rem 2rem ;
+      max-width: 30rem;
+      margin: 0 auto;
+
+      @include mediaLg{
+        max-width: 100%;
+        grid-template-columns: repeat(12, 1fr) ;
+        grid-template-rows: 3rem 2rem 4rem ;  
+      }
+    }
+
+    .section10_start{
+      padding: 0.5rem;
+      grid-column: 2/3;
+      grid-row: 1/2;
+
+      @include mediaLg{
+        grid-column: 2/4;
+      grid-row: 1/2;
+      line-height: 2rem;
+      text-align: right;
+      font-size: 1.2rem;
+      font-weight: bold;
+      }
+    }
+    .section10_end{
+      padding: 0.5rem;
+      grid-column: 2/3;
+      grid-row: 3/4;
+
+      @include mediaLg{
+        grid-column: 10/12;
+        grid-row: 1/2;
+        line-height: 2rem;
+        text-align: right;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+    }
+
+    .section10_dates:nth-child(1n){
+      grid-column: 3/4;
+      grid-row: 1/2;
+      font-weight: bold;
+      @include mediaLg{
+        grid-column: 1/6;
+      grid-row: 3/4;
+      line-height: 3rem;
+      font-size: 1.5rem;
+      }
+    }
+    .section10_dates:nth-child(2n){
+      grid-column: 3/4;
+      grid-row: 3/4;
+      font-weight: bold;
+      @include mediaLg{
+      grid-column: 8/13;
+      grid-row: 3/4;
+      line-height: 3rem;
+      font-size: 1.5rem;
+      }
+    }
+
+    .section10_dates{
+      padding: 0.5rem;
+      border-radius: 10px;
+      background-color: $background-white;
+      text-align: center;
+    }
+
+      .circle1{
+        grid-column: 1/2;
+        grid-row: 1/2;
+        padding: 0.5rem;
+        color: rgb(176, 176, 176);
+
+        @include mediaLg{
+          grid-column: 4/5;
+        grid-row: 1/2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+      }
+
+      .circle2{
+        grid-column: 1/2;
+        grid-row: 3/4;
+        padding: 0.5rem;
+        color: rgb(176, 176, 176);
+
+        @include mediaLg{
+          grid-column: 9/10;
+          grid-row: 1/2;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      
+    
+
+    div.dashed{
+      height: 4rem;
+      width: 100%;
+      grid-column: 1/2;
+      grid-row: 2/3;
+      display: flex;
+      justify-content: center;
+
+      @include mediaLg{
+        height: 3rem;
+        width: 100%;  
+        grid-column: 5/9;
+        grid-row: 1/2;
+        align-items: center;
+      }
+      
+      div{
+        height: 100%;
+        width: 1px;
+        border: dashed 1px rgb(176, 176, 176);
+        
+        @include mediaLg{
+          width: 100%;
+          height : 1px;
+        }
+      }
+    }
+
+    .section10_bottom{
+      margin-top: 2rem;
+      text-align: center;
+      font-weight: bold;
+
+      @include mediaLg{
+        font-size: 1.5rem;
+      }
+
+      span{
+        @include mediaLg{
+          padding: 0 1.5rem;
+        }
+      }
+
+      span:first-child{
+        padding:0.5rem;
+        background-color: $background-black;
+        color: white;
+        border-radius: 10px;
+      }
+
+      .section10_btn{
+        display: inline-block;
+        
+        @include mediaLg{
+          height: 3rem;
+        line-height: 3rem;
+        }
+      }
+    }
+}
+
+footer{
+  padding: 2rem;
+  height: 10rem;
+  background-color: $background-white;
+  display: grid;
+  grid-template-columns: auto 3rem ;
+  grid-template-rows: auto auto;
+
+  @include mediaLg{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-size: 1.5rem;
+
+    @include mediaLg{
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+      grid-column: 1/2;
+      grid-row: 1/2;
+    }
+
+    li{
+      @include mediaLg{
+       padding: 0 1rem;
+      }
+    }
+  }
+
+  div{
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    @include mediaLg{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+
+    img{
+      width: 8rem;
+      height: auto;
+    }
+  }
+
+  p{
+    grid-column: 1/3;
+    grid-row: 2/3;
+
+    @include mediaLg{
+      grid-column: 3/4;
+      grid-row: 1/2;
     }
   }
 }
