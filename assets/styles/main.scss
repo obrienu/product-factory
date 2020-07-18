@@ -116,6 +116,10 @@ header.header {
   &.show_nav {
     height: 16rem;
     border-bottom: 1px solid $background-white;
+
+    @include mediaMd{
+      height: 18rem;
+    }
   }
 
   /* **************LOGO****************** */
