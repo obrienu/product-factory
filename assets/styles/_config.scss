@@ -40,6 +40,21 @@ $section_margin: 4rem 1rem 0;
   transition: all 300ms ease-out;
 }
 
+@mixin  container {
+  padding-top: 2rem;
+  width: 100%;
+  margin: auto;
+
+  @include mediaLg {
+    width: 100%;
+  }
+
+  @include mediaXl {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
 .btn {
   cursor: pointer;
   border: none;

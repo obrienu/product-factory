@@ -19,7 +19,7 @@ a {
 }
 
 body {
-  background-color: darken($color: #ffffff, $amount: 4);
+  background-color: darken($color: #ffffff, $amount: 1);
   height: 100%;
   width: 100vw;
   position: relative;
@@ -81,8 +81,13 @@ body {
   padding: 0;
 }
 
-.container {
-  padding-top: 2rem;
+.container_background{
+  width: 100%;
+}
+
+.container_inner {
+  position: relative;
+  padding: 2rem 0;
   width: 100%;
   margin: auto;
 
@@ -94,6 +99,10 @@ body {
     width: 80%;
     margin: 0 auto;
   }
+}
+
+.header_container{
+  background-color: $background-black;
 }
 
 header.header {
@@ -172,7 +181,16 @@ header.header {
   }
 }
 
+.section1_container{
+  background-color: $background-black;
+  height: 15rem;
+  position: relative;
+    top: -0.5rem;
+}
+
 section.section1 {
+  position: relative;
+  top: -4rem;
   background-color: $background-white;
   height: 25rem;
   margin: 0 1rem;
@@ -251,11 +269,16 @@ section.section1 {
   }
 }
 
+.section2_container{
+  background-color: darken($color: #ffffff, $amount: 1);
+}
+
 section.section2 {
   margin: $section_margin;
   position: relative;
+  top: 6rem;
   @include mediaLg{
-    padding-top: 8rem;
+    padding-top: 12rem;
   }
 
   .section2_top {
@@ -263,7 +286,7 @@ section.section2 {
     @include mediaLg{
       display: block;
       position: absolute;
-      top: 0;
+      top: 7rem;
       left: 5rem;
       width: 30rem;
       height: auto;
@@ -350,7 +373,14 @@ section.section2 {
     }
   }
 
+  .section3_container{
+    position: relative;
+    top: 30rem;
+    background: #ffffff78  }
+
   section.section3{
+    position: relative;
+    top: -25rem;
     padding: 2rem;
     margin: $section_margin;
     background-color: $background-white ;
@@ -479,9 +509,17 @@ section.section2 {
 
   }
 
+  .section4_container{
+    position: relative;
+    top: 30rem;
+    background: #ffffff78 
+  }
+
   section.section4{
     padding: 2rem;
     margin: 4rem 0 0;
+    position: relative;
+    top: -25rem;
     
 
     h2{
@@ -856,7 +894,15 @@ h2{
   }
 }
 
+.section7_container{
+  position: relative;
+    top: 30rem;
+    background: #ffffff78 
+}
+
 section.section7{
+  position: relative;
+    top: -25rem;
   padding: 2rem 1rem;
     margin: $section_margin;
     background-color: $background-white ;
@@ -956,7 +1002,20 @@ section.section7{
     }
 }
 
+.section8_container{
+  position: relative;
+    /* top: 30rem; */
+    background: #ffffff78 
+}
+
+.container_inner8{
+  width: 100%;
+  margin: 0;
+}
+
 section.section8{
+  position: relative;
+  /* top: -27rem; */
   background-color: $background-black;
   color: $text-white;
   margin: 4rem 1rem 2rem;
@@ -1035,7 +1094,14 @@ section.section8{
 
   }
 
+  .section9_container{
+    position: relative;
+    top: 1rem;
+    background: #ffffff78
+  }
+
 section.section9{
+  position: relative;
   padding: 2rem 1rem;
   margin: $section_margin;
   border-radius: $border-radius;
